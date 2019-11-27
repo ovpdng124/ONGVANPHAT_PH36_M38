@@ -46,6 +46,25 @@ class Model
             return false;
         }
     }
+    public static function getHighestPrice(){
+        $listProduct = self::getListProduct();
+        $prices = array();
+        foreach ($listProduct as $item) {
+            $prices[] = $item->getPrice();
+        }
+        return $highestPrice = max($prices);
+    }
+
+    public static function getProductHighestPrice(){
+        $listProduct = self::getListProduct();
+        $productHighestPrice = array();
+        foreach ($listProduct as $item) {
+            if ($item->getPrice() == self::getHighestPrice()){
+                $productHighestPrice[] = $item;
+            }
+        }
+        return $productHighestPrice;
+    }
 
     public static function getListProduct()
     {
@@ -79,6 +98,6 @@ class Model
         $_SESSION['products'] = $listProduct;
     }
     public static function destroySession(){
-        session_destroy();
+        unset($_SESSION['products']);
     }
 }

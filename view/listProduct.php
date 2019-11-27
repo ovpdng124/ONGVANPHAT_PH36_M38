@@ -22,10 +22,12 @@
 <body>
 <div class="container-fluid">
     <form action="" method="post">
+        <button class="container col-2 btn btn-success mx-2 mx-md-1 mx-sm-0" type="submit" name="action"
+        value="addProductForm"><strong>Create Products</strong></button>
         <button class="btn btn-primary mx-5 mx-md-3 mx-sm-0 my-2 col-2 container" type="submit" name="action"
                 value="index"><strong>Show products list</strong></button>
-        <button class="container col-2 btn btn-success mx-2 mx-md-1 mx-sm-0" type="submit" name="action"
-                value="addProductForm"><strong>Create Products</strong></button>
+        <button class="container col-2 btn btn-secondary mx-2 mx-md-1 mx-sm-0" type="submit" name="action"
+                value="highestPrice"><strong>Highest Price Products</strong></button>
         <button class="btn btn-danger mx-2 mx-md-1 mx-sm-0 my-2 float-right" type="button" onclick="confirmDestroy();">
             <strong>Destroy all</strong></button>
     </form>

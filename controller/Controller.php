@@ -37,7 +37,7 @@ class Controller
                     include 'view/listProduct.php';
                     echo "<script>alert(\"Your data has modified!\")</script>";
                 } else {
-                    include "view/editBook.php";
+                    include "view/listProduct.php";
                     echo "<script>alert(\"Modification failed!\")</script>";
                 }
                 break;
@@ -54,6 +54,10 @@ class Controller
                 } else {
                     echo "<script>alert(\"Couldn't find code!\")</script>";
                 }
+                break;
+            case 'highestPrice':
+                $listProducts = Model::getProductHighestPrice();
+                include "view/listProduct.php";
                 break;
         }
     }
